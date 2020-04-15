@@ -194,6 +194,70 @@ const theaters = [
 	}
 ];
 
+
+function generarHomeInfo(){
+
+	const titulo = '​Bienvenidos a DH Movies el mejor sitio para encontrar las mejores películas, incluso mucho mejor que Netflix, Cuevana y PopCorn​.\n\n';
+	const totalPeliculas = 'Disponemos de ' + movies.length + ' peliculas para que disfrutes\n\n';
+	
+	const titulosDePeliculas = movies.map(movie => movie.title);
+	titulosDePeliculas.sort();
+	let listaTempPeliculas = '-----------------------------\n';
+	for (let pelicula of titulosDePeliculas){
+		listaTempPeliculas += ' - ' + pelicula + '\n';
+	}
+
+
+	const listaPeliculas = listaTempPeliculas + '-----------------------------\n\n';
+	const piePagina = 'pie de pagina\n\n'
+	return titulo + totalPeliculas + listaPeliculas + piePagina;
+}
+
+function generarCartelera(){
+	const titulo  = 'En cartelera\n\n';
+	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
+	const listadoPeliculas = 'Listado de peliculas\n\n' 
+
+	return titulo + totalPeliculas + listadoPeliculas; 
+}
+
+function generarVotadas(){
+	const titulo  = 'En cartelera\n\n';
+	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
+	const listadoPeliculas = 'Listado de peliculas\n\n' 
+
+	return titulo + totalPeliculas + listadoPeliculas; 
+}
+
+
+function generarSucursales(){
+	const titulo  = 'En cartelera\n\n';
+	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
+	const listadoPeliculas = 'Listado de peliculas\n\n' 
+
+	return titulo + totalPeliculas + listadoPeliculas; 
+}
+
+function generarContacto(){
+	const titulo  = 'En cartelera\n\n';
+	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
+	const listadoPeliculas = 'Listado de peliculas\n\n' 
+
+	return titulo + totalPeliculas + listadoPeliculas; 
+}
+
+function generarPF(){
+	const titulo  = 'En cartelera\n\n';
+	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
+	const listadoPeliculas = 'Listado de peliculas\n\n' 
+
+	return titulo + totalPeliculas + listadoPeliculas; 
+}
+
+
+
+
+
 // Servidor
 http.createServer((req, res) => {
 	res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
@@ -202,23 +266,32 @@ http.createServer((req, res) => {
 	switch (req.url) {
 		// Home
 		case '/':
-			res.end('Home');
+			//cargar funcion para generar el home
+			//TODO posible contraccion del codigo
+			let generarHome = generarHomeInfo();
+			res.end('DH Movies\n\n' + generarHome);
 			break;
 		// En cartelera
 		case '/en-cartelera':
-			res.end('En cartelera');
+			//generar cartelera
+			let cartelera = generarCartelera();
+			res.end(cartelera);
 			break;
 		case '/mas-votadas':
-			res.end('Más Votadas');
+			let votadas = generarVotadas();
+			res.end(votadas);
 			break;
 		case '/sucursales':
-			res.end('Sucursales');
+			let sucursales = generarSucursales();
+			res.end(sucursales);
 			break;
 		case '/contacto':
-			res.end('Contacto');
+			let contacto = generarContacto();
+			res.end(contacto);
 			break;
 		case '/preguntas-frecuentes':
-			res.end('Preguntas Frecuentes');
+			let preguntas = generarPF();
+			res.end(preguntas);
 			break;
 		default:
 			res.end('404 not found')
