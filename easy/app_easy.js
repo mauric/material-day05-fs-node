@@ -208,25 +208,38 @@ function generarHomeInfo(){
 	}
 
 
+
 	const listaPeliculas = listaTempPeliculas + '-----------------------------\n\n';
-	const piePagina = 'pie de pagina\n\n'
+	const secciones = ['En Cartelera', 'Mas Votadas', 'Sucursales', 'Contacto', 'Preguntas Frecuentes']
+	const piePagina = 'Recorda que podes visitar las secciones:\n\n i. En Cartelera\nii. Mas Votadas\niii. Sucursales\niv. Contacto\nv. Preguntas Frecuentes' 
 	return titulo + totalPeliculas + listaPeliculas + piePagina;
 }
 
 function generarCartelera(){
 	const titulo  = 'En cartelera\n\n';
-	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
-	const listadoPeliculas = 'Listado de peliculas\n\n' 
-
-	return titulo + totalPeliculas + listadoPeliculas; 
+	const totalCartelera = 'Disponemos de ' + movies.length + ' peliculas para que disfrutes\n\n';
+	const listadoPeliculas = 'Listado de peliculas\n\n';
+	let listaTempPeliculas = '-----------------------------\n';
+	for (let pelicula of movies){
+		listaTempPeliculas += ' - ' + pelicula.title + '\n' + pelicula.overview + '\n-----------\n\n\n';
+	}
+	return titulo + totalCartelera + listaTempPeliculas; 
 }
 
 function generarVotadas(){
-	const titulo  = 'En cartelera\n\n';
-	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
-	const listadoPeliculas = 'Listado de peliculas\n\n' 
+	const titulo  = 'Mas Votadas!!!\n\n';
 
-	return titulo + totalPeliculas + listadoPeliculas; 
+	//mejorar la tecnica con contador
+	let listaTempPeliculas = '-----------------------------\n';
+	let cont = 0;
+	for (let pelicula of movies){
+		if( pelicula.vote_average > 7){
+		listaTempPeliculas += ' - ' + pelicula.title + '\n' + pelicula.vote_average + '\n' + pelicula.overview + '\n-----------\n\n\n';
+		cont++;
+	}
+	}
+	const totalPeliculas = 'Total de peliculas de ' + cont + ' mas votadas\n\n';
+	return titulo + totalPeliculas + listaTempPeliculas; 
 }
 
 
