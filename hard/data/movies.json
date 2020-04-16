@@ -1,6 +1,4 @@
-{
-	"total_movies": 20,
-	"movies": [
+[
 		{
 			"original_title": "Joker",
 			"title": "Joker",
@@ -141,5 +139,4 @@
 			"overview": "Un asesino a sueldo, demasiado mayor, decide retirarse. Pero esto no le va a resultar tan fácil, pues tendrá que enfrentarse a un clon suyo, mucho más joven.",
 			"release_date": "2019-10-11"
 		}
-	]
-}
+]

@@ -1,6 +1,4 @@
-{
-	"total_faqs": 5,
-	"faqs": [
+[
 		{
 			"faq_title": "¿A partir de qué edad los niños deben pagar entrada?",
 			"faq_answer": "Los niños pagan entrada a partir de los 3 años.Menores de 3 años no abonan entrada mientras no ocupen una butaca adicional.Menores de 4 años tienen prohibido el ingreso a las salas 4 D y Platinum."
@@ -21,5 +19,4 @@
 			"faq_title": "¿Cuáles son los medios de pagos disponibles?",
 			"faq_answer": "Los medios de pago online son tarjeta de débito y crédito.Podes consultar todos los medios de pago online disponibles desde la web de MercadoPago.En boletería podes también pagar en efectivo."
 		}
-	]
-}
+]
