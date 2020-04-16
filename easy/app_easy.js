@@ -245,26 +245,31 @@ function generarVotadas(){
 
 function generarSucursales(){
 	const titulo  = 'En cartelera\n\n';
-	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
-	const listadoPeliculas = 'Listado de peliculas\n\n' 
 
-	return titulo + totalPeliculas + listadoPeliculas; 
+	let listaTempSalas = '---------------\n';
+	for (let salas of theaters){
+		listaTempSalas += salas.name + '\n\n' + salas.address + '\n\n' + salas.description + '\n----------------------\n';
+	}
+
+	const totalSalas = 'Disponemos de ' + theaters.length + ' salas\n';
+	return titulo + totalSalas + listaTempSalas; 
 }
 
 function generarContacto(){
-	const titulo  = 'En cartelera\n\n';
-	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
-	const listadoPeliculas = 'Listado de peliculas\n\n' 
+	const titulo  = 'Contactanos \n\n';
+	const contenido = '¿Tenés algo para contarnos? Nos encanta escuchar a nuestrosclientes. Si deseas contactarnos podés escribirnos al siguiente email:dhmovies@digitalhouse.com o en las redes sociales. Envianos tu consulta,sugerencia o reclamo y será respondido a la brevedad posible. Recordá quetambién podes consultar la sección de Preguntas Frecuentes para obtenerrespuestas inmediatas a los problemas más comunes\n\n' 
 
-	return titulo + totalPeliculas + listadoPeliculas; 
+	return titulo + contenido; 
 }
 
 function generarPF(){
-	const titulo  = 'En cartelera\n\n';
-	const totalPeliculas = 'Total de peliculas ne cartelera\n\n'
-	const listadoPeliculas = 'Listado de peliculas\n\n' 
-
-	return titulo + totalPeliculas + listadoPeliculas; 
+	const titulo  = 'Preguntas Frecuentes\n\n';
+	const totalPF = 'Generalemente nos realizan estas ' + faqs.length + ' preguntas frecuentes\n\n'
+	let  listaPF = '------------------\n\n' 
+	for (pf of faqs){
+		listaPF += ' - ' + pf.faq_title + '\n\n -' + pf.faq_answer + '\n\n----------------------\n';
+	}
+	return titulo + totalPF + listaPF;
 }
 
 
